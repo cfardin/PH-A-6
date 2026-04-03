@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
+import PriceCards from "./PriceCards";
 
-const PricingContainer = () => {
+const PricingContainer = ({priceData}) => {
   const [active, setActive] = useState("products");
+
+  const priceInfo = use(priceData);
+//   console.log(priceInfo);
+
   return (
-    <div className="w-10/12 m-auto flex flex-col items-center text-center">
+    <div className="w-full md:w-10/12 m-auto flex flex-col items-center text-center">
       {/* pricing card heading */}
       <div>
         <h1>Premium Digital Tools</h1>
@@ -43,7 +48,11 @@ const PricingContainer = () => {
       </div>
 
       {/* price cards  */}
-      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+        {
+            priceInfo.map((cards, index) => <PriceCards key={index} cards = {cards}></PriceCards>)
+        }
+      </div>
 
 
     </div>

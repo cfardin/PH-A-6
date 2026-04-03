@@ -4,7 +4,7 @@ import dot from "../assets/dot.png";
 import { CiPlay1 } from "react-icons/ci";
 const HeroBanner = () => {
   return (
-    <div className="w-10/12 m-auto">
+    <div className="w-full md:w-10/12 m-auto">
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img

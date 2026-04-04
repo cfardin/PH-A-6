@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaCheck } from 'react-icons/fa6';
 import { RiH4 } from 'react-icons/ri';
 
-const PriceCards = ({ cards }) => {
+const PriceCards = ({ cards, selected, setSelected, money, setMoney }) => {
     // console.log(price);
     const {image, title, badge, description, price, billing_cycle, features } = cards;
+     const [isSelected, setIsSelected] = useState(false);
+
+    const handleSelection = (value) =>{
+        setMoney(value + money);
+
+
+        setIsSelected(true);
+        setSelected([...selected, cards]);
+    }
+
+
 
     const productTag = {
         "Best-Seller" : <div className="badge badge-soft badge-warning">Best Seller</div>,
@@ -39,7 +50,7 @@ const PriceCards = ({ cards }) => {
             </div>
 
             <div>
-                <button className="btn w-full rounded-[25px] bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white">Buy Now</button>
+                <button onClick={() => handleSelection(price)} disabled ={isSelected ? true : false} className="btn w-full rounded-[25px] bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white">{isSelected ? "In Cart" : "Buy Now"}</button>
             </div>
 
         </div>

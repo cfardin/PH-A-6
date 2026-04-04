@@ -1,9 +1,13 @@
 import React, { use, useState } from "react";
 import PriceCards from "./PriceCards";
+import MyCart from "./MyCart";
 
 const PricingContainer = ({priceData}) => {
   const [active, setActive] = useState("products");
 
+  const [selected, setSelected] = useState([]);
+  const [money, setMoney] = useState(0);
+  
   const priceInfo = use(priceData);
 //   console.log(priceInfo);
 
@@ -43,7 +47,7 @@ const PricingContainer = ({priceData}) => {
               : "text-purple-900"
           }`}
         >
-          Cart (2)
+          Cart ({selected.length})
         </button>
       </div>
 
@@ -51,15 +55,11 @@ const PricingContainer = ({priceData}) => {
       {
         active === "products" ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
         {
-            priceInfo.map((cards, index) => <PriceCards key={index} cards = {cards}></PriceCards>)
+            priceInfo.map((cards, index) => <PriceCards key={index} cards = {cards} selected={selected} setSelected = {setSelected} money = {money} setMoney = {setMoney} ></PriceCards>)
         }
-      </div> : <div>this is my Cart</div>
+      </div> : <MyCart selected = {selected} setSelected = {setSelected} money = {money} setMoney = {setMoney}></MyCart>
       }
-      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-        {
-            priceInfo.map((cards, index) => <PriceCards key={index} cards = {cards}></PriceCards>)
-        }
-      </div> */}
+     
 
 
     </div>

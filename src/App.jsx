@@ -5,6 +5,8 @@ import Navbar from './components/Navbar'
 import PricingContainer from './components/price-section/PricingContainer'
 import Values from './components/Values'
 import GetStarted from './components/GetStarted'
+import Plans from './components/Plans'
+import Footer from './components/Footer'
 
 
 const fetchedPriceData = async() =>{
@@ -26,7 +28,8 @@ function App() {
         </Suspense>
 
         <GetStarted></GetStarted>
-        
+        <Plans></Plans>
+        <Footer></Footer>
     </>
   )
 }

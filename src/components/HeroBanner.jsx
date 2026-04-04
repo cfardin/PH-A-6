@@ -14,7 +14,7 @@ const HeroBanner = () => {
           {/* hero text stuffs */}
           <div>
             <div className="badge badge-soft badge-primary text-[#4F39F6] rounded-[25px] p-4"><img src={dot} alt="" />New: AI-Powered Tools Available</div>
-            <h1 className="text-[72px] leading-20 line- font-extrabold">Supercharge Your<br />Digital Workflow</h1>
+            <h1 className="text-[72px] leading-20 line- font-extrabold">Supercharge Your<br /><span className="text-[#4F39F6]">Digital Workflow</span></h1>
             <p className="text-[#627382] py-6">
               Access premium AI tools, design assets, templates, and productivity <br />
               software—all in one place. Start creating faster today. <br />

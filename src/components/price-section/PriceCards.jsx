@@ -1,5 +1,6 @@
 import { FaCheck } from 'react-icons/fa6';
 import { RiH4 } from 'react-icons/ri';
+import { toast } from 'react-toastify';
 
 const PriceCards = ({ cards, selected, setSelected}) => {
     // console.log(price);
@@ -8,6 +9,8 @@ const PriceCards = ({ cards, selected, setSelected}) => {
     const isSelected = selected.some(item => item.title === title);
 
     const handleSelection = () =>{
+
+        toast(`${title} added to cart`);
         if (!isSelected) {
             setSelected([...selected, cards]);
         }

@@ -2,10 +2,10 @@ import React, { use, useState } from "react";
 import PriceCards from "./PriceCards";
 import MyCart from "./MyCart";
 
-const PricingContainer = ({priceData}) => {
+const PricingContainer = ({priceData, selected, setSelected}) => {
   const [active, setActive] = useState("products");
 
-  const [selected, setSelected] = useState([]);
+  
   
   
   const priceInfo = use(priceData);

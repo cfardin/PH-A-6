@@ -2,7 +2,7 @@ import React from "react";
 import { CiShoppingCart } from "react-icons/ci";
 import { FaCartShopping } from "react-icons/fa6";
 
-const Navbar = () => {
+const Navbar = ({ selected }) => {
   return (
     <div className="w-full md:w-10/12 m-auto">
       <div className="navbar bg-base-100 shadow ">
@@ -29,30 +29,57 @@ const Navbar = () => {
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-                <li><a href="">Products</a></li>
-                <li><a href="">Features</a></li>
-                <li><a href="">Pricing</a></li>
-                <li><a href="">Testimonials</a></li>
-                <li><a href="">FAQ</a></li>
+              <li>
+                <a href="">Products</a>
+              </li>
+              <li>
+                <a href="">Features</a>
+              </li>
+              <li>
+                <a href="">Pricing</a>
+              </li>
+              <li>
+                <a href="">Testimonials</a>
+              </li>
+              <li>
+                <a href="">FAQ</a>
+              </li>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">daisyUI</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-           <li><a href="">Products</a></li>
-           <li><a href="">Features</a></li>
-           <li><a href="">Pricing</a></li>
-           <li><a href="">Testimonials</a></li>
-           <li><a href="">FAQ</a></li>
+            <li>
+              <a href="">Products</a>
+            </li>
+            <li>
+              <a href="">Features</a>
+            </li>
+            <li>
+              <a href="">Pricing</a>
+            </li>
+            <li>
+              <a href="">Testimonials</a>
+            </li>
+            <li>
+              <a href="">FAQ</a>
+            </li>
           </ul>
         </div>
         <div className="navbar-end space-x-4">
-            <div>
-                <FaCartShopping></FaCartShopping>
-            </div>
-            <a className="font-semibold">Login</a>
-            <a className="btn rounded-[25px] text-white font-semibold bg-linear-to-r from-[#4F39F6] to-[#9514FA]">Get Started</a>
+          <div>
+            <FaCartShopping></FaCartShopping>
+            {selected.length > 0 && (
+              <span className="flex items-center justify-center rounded-full absolute top-3 right-45  h-4 w-4  bg-red-500 text-[10px] text-white">
+                {selected.length}
+              </span>
+            )}
+          </div>
+          <a className="font-semibold">Login</a>
+          <a className="btn rounded-[25px] text-white font-semibold bg-linear-to-r from-[#4F39F6] to-[#9514FA]">
+            Get Started
+          </a>
         </div>
       </div>
     </div>

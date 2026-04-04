@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import './App.css'
 import HeroBanner from './components/HeroBanner'
 import Navbar from './components/Navbar'
@@ -17,14 +17,14 @@ const fetchedPriceData = async() =>{
 const priceData = fetchedPriceData();
 
 function App() {
-
+const [selected, setSelected] = useState([]);
   return (
     <>
-        <Navbar></Navbar>
+        <Navbar selected={selected}></Navbar>
         <HeroBanner></HeroBanner>
         <Values></Values>
         <Suspense fallback = {<span className="loading loading-bars loading-xl"></span>}>
-            <PricingContainer priceData = {priceData}></PricingContainer>
+            <PricingContainer priceData = {priceData} selected={selected} setSelected={setSelected} ></PricingContainer>
         </Suspense>
 
         <GetStarted></GetStarted>

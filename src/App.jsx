@@ -4,6 +4,7 @@ import HeroBanner from './components/HeroBanner'
 import Navbar from './components/Navbar'
 import PricingContainer from './components/price-section/PricingContainer'
 import Values from './components/Values'
+import GetStarted from './components/GetStarted'
 
 
 const fetchedPriceData = async() =>{
@@ -23,6 +24,8 @@ function App() {
         <Suspense fallback = {<span className="loading loading-bars loading-xl"></span>}>
             <PricingContainer priceData = {priceData}></PricingContainer>
         </Suspense>
+
+        <GetStarted></GetStarted>
         
     </>
   )

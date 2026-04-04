@@ -6,7 +6,7 @@ const PricingContainer = ({priceData}) => {
   const [active, setActive] = useState("products");
 
   const [selected, setSelected] = useState([]);
-  const [money, setMoney] = useState(0);
+  
   
   const priceInfo = use(priceData);
 //   console.log(priceInfo);
@@ -55,9 +55,9 @@ const PricingContainer = ({priceData}) => {
       {
         active === "products" ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
         {
-            priceInfo.map((cards, index) => <PriceCards key={index} cards = {cards} selected={selected} setSelected = {setSelected} money = {money} setMoney = {setMoney} ></PriceCards>)
+            priceInfo.map((cards, index) => <PriceCards key={index} cards = {cards} selected={selected} setSelected = {setSelected} ></PriceCards>)
         }
-      </div> : <MyCart selected = {selected} setSelected = {setSelected} money = {money} setMoney = {setMoney}></MyCart>
+      </div> : <MyCart selected = {selected} setSelected = {setSelected} ></MyCart>
       }
      
 

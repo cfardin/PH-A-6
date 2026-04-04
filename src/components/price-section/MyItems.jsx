@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MyItems = ({ items }) => {
+const MyItems = ({ items, handleRemove }) => {
     const { image, title, price } = items;
     return (
         <div className="flex items-center justify-between bg-gray-50 rounded-2xl px-5 py-4">
@@ -11,7 +11,7 @@ const MyItems = ({ items }) => {
                     <p className="text-sm text-gray-400">{price}</p>
                 </div>
             </div>
-            <button className="text-red-400 font-medium text-sm hover:text-red-600 transition-colors">
+            <button onClick={handleRemove} className="text-red-400 font-medium text-sm hover:text-red-600 transition-colors">
                 Remove
             </button>
         </div>

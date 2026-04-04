@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
 import { FaCheck } from 'react-icons/fa6';
 import { RiH4 } from 'react-icons/ri';
 
-const PriceCards = ({ cards, selected, setSelected, money, setMoney }) => {
+const PriceCards = ({ cards, selected, setSelected}) => {
     // console.log(price);
     const {image, title, badge, description, price, billing_cycle, features } = cards;
-     const [isSelected, setIsSelected] = useState(false);
+    //  const [isSelected, setIsSelected] = useState(false);
+    const isSelected = selected.some(item => item.title === title);
 
-    const handleSelection = (value) =>{
-        setMoney(value + money);
+    const handleSelection = () =>{
+        if (!isSelected) {
+            setSelected([...selected, cards]);
+        }
 
 
-        setIsSelected(true);
-        setSelected([...selected, cards]);
     }
 
 
@@ -36,7 +36,7 @@ const PriceCards = ({ cards, selected, setSelected, money, setMoney }) => {
             </div>
 
             <div className='flex items-center mb-4'>
-                <h3 className='text-2xl font-bold'>{price}</h3>
+                <h3 className='text-2xl font-bold'>${price}</h3>
                 <p className='text-[#627382]' >/{billing_cycle}</p>
             </div>
 

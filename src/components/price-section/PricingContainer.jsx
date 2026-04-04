@@ -8,19 +8,19 @@ const PricingContainer = ({priceData}) => {
 //   console.log(priceInfo);
 
   return (
-    <div className="w-full md:w-10/12 m-auto flex flex-col items-center text-center">
+    <div className="w-full md:w-10/12 m-auto flex flex-col items-center text-center mb-30">
       {/* pricing card heading */}
       <div>
-        <h1>Premium Digital Tools</h1>
-        <p>
+        <h1 className="text-[48px] font-extrabold">Premium Digital Tools</h1>
+        <p className="text-[#627382] mt-4">
           Choose from our curated collection of premium digital products
-          designed to boost your productivity and creativity.
+          designed <br /> to boost your productivity and creativity.
         </p>
       </div>
 
 
       {/* toggle btn */}
-      <div className="flex items-center bg-gray-100 rounded-full p-1 w-fit">
+      <div className="flex items-center bg-gray-100 rounded-full p-1 w-fit mt-4 mb-10">
             {/* Products Button */}
         <button
           onClick={() => setActive("products")}
@@ -48,11 +48,18 @@ const PricingContainer = ({priceData}) => {
       </div>
 
       {/* price cards  */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+      {
+        active === "products" ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
         {
             priceInfo.map((cards, index) => <PriceCards key={index} cards = {cards}></PriceCards>)
         }
-      </div>
+      </div> : <div>this is my Cart</div>
+      }
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+        {
+            priceInfo.map((cards, index) => <PriceCards key={index} cards = {cards}></PriceCards>)
+        }
+      </div> */}
 
 
     </div>

@@ -1,6 +1,8 @@
-import user from "../../assets/user.png";
-import packageImg from "../../assets/package.png";
-import rocket from "../../assets/rocket.png";
+import user from "../assets/user.png"
+import packageImg from "../assets/package.png"
+import rocket from "../assets/rocket.png"
+
+
 
 const GetStarted = () => {
     const steps = [
